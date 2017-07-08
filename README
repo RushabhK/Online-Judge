@@ -29,7 +29,7 @@
 
 14. To let admin access and edit the entries in Models:
 		i. django manage.py createsuperuser
-		ii. python manage.py startserver
+		ii. python manage.py runserver
 		iii. Go to URL/admin and login 	
 
 15. Open django shell:
