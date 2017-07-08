@@ -1,0 +1,22 @@
+1. Install Docker
+	i.  Install .deb file of docker (For Ubuntu)
+	ii. sudo dpkg -i /path_to_deb_file
+
+Steps to enable docker to run without sudo:
+	i. sudo groupadd docker
+	ii. sudo usermod -aG docker $USER  
+	iii. Logout and again login.
+
+Build Docker Image:
+Go to ONLINE_JUDGE directory and type:
+	docker build -t judge_image .
+
+
+Docker commands:
+1. To build docker image: sudo docker build -t ubuntu .
+2. To list docker images: sudo docker images
+3. To delete docker image: sudo docker rmi -f <image_id>
+
+To uninstall docker:
+1. sudo apt-get purge docker-ce
+2. sudo rm -rf /var/lib/docker

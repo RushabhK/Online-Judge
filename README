@@ -1,0 +1,61 @@
+1. Install virtualenv:
+	sudo pip3 install virtualenv
+
+2. mkdir Django_project
+3. cd Django_project
+4. virtualenv -p python3 newenv2
+5. Activate virtual env: source newenv/bin/activate
+6. Deactivate: deactivate
+7. cd newenv
+8. pip3 install django
+	
+
+9. Create project Backend
+	django-admin startproject Backend
+
+10. cd Backend
+11. python manage.py startapp backend_app
+
+12. Create models & generate migration files by:
+		python manage.py makemigrations	
+
+	Run migration files by:
+		python manage.py migrate
+
+13. Install sqlitebrowser for testing:
+		sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser
+		sudo apt-get update
+		sudo apt-get install sqlitebrowser
+
+14. To let admin access and edit the entries in Models:
+		i. django manage.py createsuperuser
+		ii. python manage.py startserver
+		iii. Go to URL/admin and login 	
+
+15. Open django shell:
+		python manage.py shell
+
+16. Install MySql:
+	Follow this: https://www.digitalocean.com/community/tutorials/how-to-use-mysql-or-mariadb-with-your-django-application-on-ubuntu-14-04
+
+	sudo apt-get update
+
+	sudo apt-get install python-pip python-dev mysql-server libmysqlclient-dev
+
+	sudo mysql_install_db
+
+	sudo mysql_secure_installation
+
+	mysql -u root -p
+
+	CREATE DATABASE judge_database;	
+
+	CREATE USER judge_user@localhost IDENTIFIED BY 'password';
+
+	FLUSH PRIVILEGES;
+
+	exit
+
+17. Install mysqlclient package for django:
+	source newenv/bin/activate
+	pip install django mysqlclient

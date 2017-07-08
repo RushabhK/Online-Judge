@@ -1,0 +1,1 @@
+docker run --memory-reservation 50M --ulimit nproc=100 -v /home/rushabh/Desktop/Projects/ONLINE_JUDGE/scripts:/tmp/scripts -v /home/rushabh/Desktop/Projects/ONLINE_JUDGE/submissions:/tmp/submissions -v /home/rushabh/Desktop/Projects/ONLINE_JUDGE/testcases:/tmp/testcases -t judge_image timeout 10 python /tmp/scripts/script.py team1 1 2 1 1
