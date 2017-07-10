@@ -32,6 +32,8 @@
 
 		CREATE USER judge_user@localhost IDENTIFIED BY 'password';
 
+		use judge_database;
+
 		GRANT ALL PRIVILEGES ON judge_database TO judge_user@'localhost';
 
 		FLUSH PRIVILEGES;
@@ -50,6 +52,6 @@
 		python manage.py migrate
 
 13. To let admin access and create questions and setup the test:
-		i. django manage.py createsuperuser
+		i. python manage.py createsuperuser
 		ii. python manage.py runserver
 		iii. Go to URL/admin and login 	

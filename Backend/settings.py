@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import time
+import datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -135,7 +137,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-print("base dir path", os.path.join(BASE_DIR, "static"))
+# print("base dir path", os.path.join(BASE_DIR, "static"))
 
 # Crispy forms Framework setup
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -143,8 +145,14 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # Registration Redux
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
-LOGIN_REDIRECT_URL = '/tests/'
+LOGIN_REDIRECT_URL = '/questions/'
 
-# Application view specific settings
-# =======================================================
-# APP_NAME = 'MCQ WEB APP'
+#Test time settings:
+DAY = 1
+MONTH = 8
+YEAR = 2017
+HOUR = 13
+MINUTE = 30
+SECOND = 0
+START_TIME = datetime.datetime(YEAR, MONTH, DAY, HOUR, MINUTE, SECOND)
+DURATION = 10800 #In seconds(3 hrs)

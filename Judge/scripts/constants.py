@@ -30,7 +30,7 @@ EXTENSION = ["", ".c", ".cpp", ".java", ".py"]
 CODE_FILE = "Program"
 COMPILE_FILE = "compile_error"
 RUNTIME_FILE = "runtime_error"
-RESULT_FILE = "result"
+RESULT_FILE = "result.json"
 
 RUN_CMD_1 = ["", "",          "",          "java",    "python"]
 RUN_CMD_2 = ["", "./Program", "./Program", "Program", "Program.py"]

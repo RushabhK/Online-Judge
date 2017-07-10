@@ -24,4 +24,7 @@ urlpatterns = [
     url(r'^$', views.index, name = 'index'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^questions/$', views.questions, name='questions'),
+    url(r'^questions/q(?P<q_id>\d+)/', views.display_question, name='display_question'),
+    url(r'^leaderboard/', views.leaderboard, name='leaderboard')
 ]

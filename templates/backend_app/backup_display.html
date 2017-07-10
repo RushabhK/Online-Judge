@@ -1,0 +1,50 @@
+		<form action="submission">
+		<h4>Select program file: </h4><input type="file" name="code_file">
+		<br>
+		<h4>Select Language: <input type="number" name="lang_id" min="1" max="4"></h4>
+		<br> 
+		<input type="submit" value="Submit Solution">
+		</form>
+
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1  col-sm-6 col-sm-offset-3  col-md-4 col-md-offset-4 text-center">
+            <h2>{{q_obj.problem_name}}</h2>
+        </div>
+
+    </div>
+
+
+	<div class="jumbotron">
+	<div class="container text-left">
+	    <h4><b>Problem Statement</b>:</h4>
+	    	{{q_obj.problem_statement}} 
+	</div>
+	</div>
+
+	<div class="jumbotron">
+	<div class="container text-left">
+	    <h4><b>Constraints</b>:</h4>
+	    	{{q_obj.constraints}}
+	</div>
+	</div>
+
+
+	<div class="jumbotron">
+	<div class="container text-left">
+	    <h4><b>Sample Input</b>:</h4>
+	    	{{q_obj.sample_ip}}
+	</div>
+	</div>
+
+	<div class="jumbotron">
+	<div class="container text-left">
+	    <h4><b>Sample Output</b>:</h4>
+	    	{{q_obj.sample_op}}
+	</div>
+	</div>
+
+	<div class="jumbotron">
+	<div class="container text-left">
+	    <h4><b>Time Limits</b>: {{q_obj.sample_op}} seconds</h4>
+	</div>
+	</div>

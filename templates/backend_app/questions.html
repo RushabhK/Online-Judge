@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+All Questions here!!
+
+{% endblock title %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1  col-sm-6 col-sm-offset-3  col-md-4 col-md-offset-4 text-center">
+            <h1>Questions</h1>
+            {% for key in questions %}
+        	   <p> 
+        	   		<h3>
+        	   			{{key.q_id}} &nbsp;  <a href="{% url 'display_question' key.q_id %}">{{key.problem_name}}</a>
+        	   		</h3>
+        	   </p>
+			{% endfor %}  
+        </div>
+    </div>
+
+	  
+
+{% endblock content %}

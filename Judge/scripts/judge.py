@@ -12,6 +12,16 @@ FLAGS:
 4 - Accepted
 '''
 
+def get_tc_ids(path_to_q_no):
+	files_list = os.listdir(path_to_q_no)
+	tc_id_list = []
+	for file in files_list:
+		path_to_ip_tc = os.path.join(path_to_q_no, file)
+		if os.path.isfile(path_to_ip_tc):
+			if file[:2] == "ip" and file[2:].isdigit() and (OP+file[2:] in files_list):
+				tc_id_list.append(int(file[2:]))
+	return tc_id_list
+
 class Judge:
 	def __init__(self, team_id, sub_id, lang_id, q_no, time_limit):
 		try:
@@ -114,21 +124,17 @@ class Judge:
 	def generate_result(self): #Returns a list of flags for the i/p testcases
 		if not self.is_valid:
 			print "Details not valid!"
-			return		
-		tc_count = 1
-		while True:
-			path_to_ip_tc = os.path.join(self.path_to_q_no, IP + str(tc_count) )
-			path_to_op_tc = os.path.join(self.path_to_q_no, OP + str(tc_count) )
-			if os.path.isfile(path_to_ip_tc) and os.path.isfile(path_to_op_tc):
-				tc_count += 1
-			else:
-				tc_count -= 1
-				break
+			return
+
+		tc_id_list = get_tc_ids(self.path_to_q_no)
+
+		result = {}
 		if self.lang_id <= 3: #Language other than python
 			if not self.check_compilation(): #Compile Error
-				return [0]*tc_count
-		result = []
-		for tc_no in range(1, tc_count+1):
+				for tc_no in tc_id_list:
+					result[tc_no] = 0
+
+		for tc_no in tc_id_list:
 			path_to_ip_tc = os.path.join(self.path_to_q_no, IP + str(tc_no) )
 			path_to_op_tc = os.path.join(self.path_to_q_no, OP + str(tc_no) )
 			path_to_my_op = os.path.join(self.path_to_sub_id, OP + str(tc_no) )
@@ -141,9 +147,9 @@ class Judge:
 				my_op_obj.close()
 				actual_op_obj.close()
 				if my_op == actual_op: #AC
-					result.append(4)
+					result[tc_no] = 4
 				else: #WA
-					result.append(3)
+					result[tc_no] = 3
 			else:
-				result.append(flag)
+				result[tc_no] = flag
 		return result
