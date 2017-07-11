@@ -21,7 +21,15 @@
 			{# {{ form.as_p }} #}
 			<h4>Select program file: </h4>
 			<input name="code_file" type="file" />
-			<h4>Select Language: <input type="number" name="lang_id" min="1" max="4"></h4>
+			<h4>
+
+				Select Language: <br>  
+					<input type="radio" name="lang_id" value="1"> C <br>
+					<input type="radio" name="lang_id" value="2"> C++ <br>
+					<input type="radio" name="lang_id" value="3"> Java <br>
+					<input type="radio" name="lang_id" value="4"> Python <br>
+
+			</h4>
 			<button type="submit" class="btn btn-success">Submit Solution</button>
 
 		</form>

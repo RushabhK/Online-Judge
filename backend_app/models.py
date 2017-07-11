@@ -67,7 +67,8 @@ class Submissions(models.Model):
 	lang_id = models.IntegerField(
 		validators=[MaxValueValidator(4), MinValueValidator(1)])
 	score = models.IntegerField()
-	time = models.DateTimeField(default=datetime.now)
+	time = models.DateTimeField(auto_now_add=True)
+	# time = datetime(default=datetime.now())
 
 	def __str__(self):
 		return str(self.sub_id)
