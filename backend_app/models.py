@@ -5,7 +5,6 @@ import Judge.scripts.constants as const
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 from collections import defaultdict
-from compositefk.fields import CompositeForeignKey
 from django.db.models.deletion import CASCADE
 from datetime import datetime
 
