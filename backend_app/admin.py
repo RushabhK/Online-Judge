@@ -13,7 +13,10 @@ class TestCaseAdmin(admin.ModelAdmin):
 class SubmissionsAdmin(admin.ModelAdmin):
 	list_display = ['sub_id', 'user', 'question', 'lang_id', 'score', 'time']
 
+class SubmissionResultsAdmin(admin.ModelAdmin):
+	list_display = ['submission', 'testcase', 'status']
+
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(TestCase, TestCaseAdmin)
 admin.site.register(Submissions, SubmissionsAdmin)
-admin.site.register(SubmissionResults)
+admin.site.register(SubmissionResults, SubmissionResultsAdmin)

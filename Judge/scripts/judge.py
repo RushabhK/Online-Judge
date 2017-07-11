@@ -49,12 +49,12 @@ class Judge:
 			if not os.path.isfile(self.path_to_file):
 				raise Exception("File " + self.path_to_file + " doesn't exist!")
 		except Exception as e:
-			print e
+			print (e)
 			self.is_valid = False
 
 	def check_compilation(self): #Returns True for successful compilation, else False
 		if not self.is_valid:
-			print "Details not valid!"
+			print ("Details not valid!")
 			return
 		try:
 			if self.lang_id > 3:
@@ -75,17 +75,17 @@ class Judge:
 			compile_error_obj.close()
 			compile_flag = process_obj.poll()  #Exit status for compilation
 			if compile_flag == 0:
-				print "Compilation Successful!"
+				print ("Compilation Successful!")
 				return True
 			else:
-				print "Compilation Error!"
+				print ("Compilation Error!")
 				return False		
 		except Exception as e:
-			print e
+			print (e)
 
 	def check_rte_and_tle(self, tc_no): # Returns 1 for RTE, 2 for TLE, 3 for Success
 		if not self.is_valid:
-			print "Details not valid!"
+			print ("Details not valid!")
 			return	
 		path_to_ip_tc = os.path.join(self.path_to_q_no, IP + str(tc_no) )
 		path_to_op = os.path.join(self.path_to_sub_id, OP + str(tc_no) )
@@ -111,19 +111,19 @@ class Judge:
 		input_obj.close()
 		output_obj.close()
 		if process_status is None:
-			print "TLE!"
+			print ("TLE!")
 			process_obj.kill()
 			return 2
 		elif process_status == 0:
-			print "Ran without errors!"
+			print ("Ran without errors!")
 			return 3
 		else:
-			print "Runtime Error!"
+			print ("Runtime Error!")
 			return 1
 
 	def generate_result(self): #Returns a list of flags for the i/p testcases
 		if not self.is_valid:
-			print "Details not valid!"
+			print ("Details not valid!")
 			return
 
 		tc_id_list = get_tc_ids(self.path_to_q_no)

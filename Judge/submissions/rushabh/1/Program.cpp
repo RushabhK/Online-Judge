@@ -1,0 +1,1 @@
+b'#include <iostream>\nusing namespace std;\nint main()\n{\n\tint n;\n\tcin>>n;\n\tcout<<n;\n\treturn 0;\n}'

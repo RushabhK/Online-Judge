@@ -1,0 +1,6 @@
+/home/rushabh/Desktop/Projects/Django_project/newenv/ONLINE_JUDGE/Judge/submissions/rushabh/1/Program.cpp:1:2: warning: character constant too long for its type [enabled by default]
+ b'#include <iostream>\nusing namespace std;\nint main()\n{\n\tint n;\n\tcin>>n;\n\tcout<<n;\n\treturn 0;\n}'
+  ^
+/home/rushabh/Desktop/Projects/Django_project/newenv/ONLINE_JUDGE/Judge/submissions/rushabh/1/Program.cpp:1:1: error: ‘b’ does not name a type
+ b'#include <iostream>\nusing namespace std;\nint main()\n{\n\tint n;\n\tcin>>n;\n\tcout<<n;\n\treturn 0;\n}'
+ ^

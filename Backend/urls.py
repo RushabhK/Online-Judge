@@ -18,6 +18,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from registration.backends.default import urls
 from backend_app import views
+from django.conf.urls.static import static
 
 
 urlpatterns = [  

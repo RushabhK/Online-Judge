@@ -57,7 +57,7 @@ class TestCase(models.Model):
 		return str(const.Q + str(self.question.q_id) + ":"  + "tc " + str(self.tc_id))
 
 	def get_score(self):
-		self.score
+		return self.score
 
 
 class Submissions(models.Model):
@@ -106,10 +106,8 @@ class SubmissionResults(models.Model):
 	def __str__(self):
 		return "sub_id:"+str(self.submission.sub_id)+" tc_id:"+str(self.testcase.tc_id)
 
-	@staticmethod
-	def get_score(submission, testcase):
-		result_obj = SubmissionResults.objects.get(submission=submission, testcase=testcase)
-		if result_obj.status != 4:
+	def get_score(self):
+		if self.status != 4:
 			return 0
 		else:
-			return testcase.get_score()
+			return self.testcase.get_score()

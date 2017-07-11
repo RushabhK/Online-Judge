@@ -24,4 +24,4 @@ try:
 	json.dump(result, open(path_to_result, 'w'))
 
 except Exception as e:
-	print e
+	print (e)

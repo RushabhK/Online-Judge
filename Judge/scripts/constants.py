@@ -43,3 +43,18 @@ DOCKER_BASE_DIR = "/tmp"
 DOCKER_SUBMISSION_PATH = os.path.join(DOCKER_BASE_DIR, "submissions")
 DOCKER_TESTCASE_PATH = os.path.join(DOCKER_BASE_DIR, "testcases")
 DOCKER_SCRIPT_PATH = os.path.join(DOCKER_BASE_DIR, "scripts")
+
+'''
+FLAGS:
+0 - Compile time Error
+1 - Runtime Error
+2 - Time Limit Exceed
+3 - Wrong Answer
+4 - Accepted
+'''
+STATUS = {}
+STATUS[0] = "Compile Time Error!"
+STATUS[1] = "Run Time Error!"
+STATUS[2] = "Time Limit Exceeded!"
+STATUS[3] = "Wrong Answer!"
+STATUS[4] = "Accepted!!"
