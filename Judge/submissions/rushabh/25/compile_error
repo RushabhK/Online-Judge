@@ -1,0 +1,4 @@
+/home/rushabh/Desktop/Projects/Django_project/newenv/ONLINE_JUDGE/Judge/submissions/rushabh/25/Program.cpp: In function ‘int main()’:
+/home/rushabh/Desktop/Projects/Django_project/newenv/ONLINE_JUDGE/Judge/submissions/rushabh/25/Program.cpp:8:2: error: expected ‘;’ before ‘return’
+  return 0;
+  ^

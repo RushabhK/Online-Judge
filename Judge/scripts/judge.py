@@ -133,6 +133,7 @@ class Judge:
 			if not self.check_compilation(): #Compile Error
 				for tc_no in tc_id_list:
 					result[tc_no] = 0
+				return result
 
 		for tc_no in tc_id_list:
 			path_to_ip_tc = os.path.join(self.path_to_q_no, IP + str(tc_no) )

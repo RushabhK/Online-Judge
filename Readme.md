@@ -55,20 +55,20 @@ $ python manage.py makemigrations
 $ python manage.py migrate
 ```
 
-#### 8. Create admin to create questions adn setup the test:
+#### 8. Create admin to create questions and setup the test:
 ```
 $ python manage.py createsuperuser
 $ python manage.py runserver
 ```
-##### Go to URL/admin, login and add questions
+##### Go to URL/admin, login and add questions & Testcases for the questions.
 
 
 #### 9. Install Docker
-i. Download .deb file of docker(For Ubuntu)
-ii. Install command:
-```
-sudo dpkg -i /path_to_deb_file
-```
+ - Download .deb file of docker(For Ubuntu)  
+ - Install command:
+    ```
+    $ sudo dpkg -i /path_to_deb_file
+    ```
 
 #### 10. Enable docker container to run without sudo
 ```
@@ -84,8 +84,8 @@ $ docker build -t judge_image .
 ```
 
 #### 12. Setup Contest
-i. Set test time settings in Backend/settings.py (DURATION and START_TIME)
-ii. Set memory limit in Judge/scripts/constants.py (MEMORY_LIMIT)
+ - Set test time settings in Backend/settings.py (DURATION and START_TIME)  
+ - Set memory limit in Judge/scripts/constants.py (MEMORY_LIMIT)
 
 #### 13. Start Server
 ```

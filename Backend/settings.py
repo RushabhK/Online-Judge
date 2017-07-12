@@ -148,10 +148,10 @@ REGISTRATION_AUTO_LOGIN = True
 LOGIN_REDIRECT_URL = '/questions/'
 
 #Test time settings:
-DAY = 11
+DAY = 12
 MONTH = 7
 YEAR = 2017
-HOUR = 23
+HOUR = 12
 MINUTE = 0
 SECOND = 0
 START_TIME = datetime.datetime(YEAR, MONTH, DAY, HOUR, MINUTE, SECOND)
